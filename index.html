@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>เลือกเกม</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;500;600&family=Sarabun:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0f14; --surface:#151a22; --surface-hi:#1c2330; --line:#262e3b;
+  --ink:#eef1f5; --muted:#93a0b2; --accent:#f2b84b;
+  --sea:#4fe3c1; --teak:#c8904a; --lacquer:#d9434f;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  min-height:100vh; background:var(--bg); color:var(--ink);
+  font-family:Sarabun,system-ui,sans-serif; line-height:1.55;
+  background-image:radial-gradient(ellipse 80% 50% at 50% -10%, #1d2738 0%, transparent 70%);
+}
+.wrap{max-width:1040px;margin:0 auto;padding:56px 16px 40px}
+header{margin-bottom:36px}
+h1{font-family:Mitr,sans-serif;font-weight:600;font-size:clamp(1.9rem,5vw,2.6rem);margin:0 0 6px;letter-spacing:.01em}
+header p{margin:0;color:var(--muted)}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.card{
+  position:relative; display:flex; flex-direction:column;
+  background:var(--surface); border:1px solid var(--line); border-radius:16px; overflow:hidden;
+  transition:transform .18s ease, border-color .18s ease, background .18s ease;
+}
+.card:hover,.card:focus-within{transform:translateY(-3px);border-color:var(--c);background:var(--surface-hi)}
+.art{height:150px;display:grid;place-items:center;background:var(--art);border-bottom:1px solid var(--line)}
+.art svg{width:96px;height:96px}
+.body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+h2{font-family:Mitr,sans-serif;font-weight:500;font-size:1.3rem;margin:0}
+h2 a{color:inherit;text-decoration:none}
+h2 a::after{content:"";position:absolute;inset:0}
+.desc{margin:0;color:var(--muted);font-size:.95rem;flex:1}
+.meta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:6px}
+.tag{font-size:.8rem;color:var(--c);border:1px solid var(--c);border-radius:999px;padding:2px 10px}
+.offline{position:relative;z-index:1;font-size:.85rem;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.offline:hover{color:var(--ink)}
+.battleship{--c:var(--sea);--art:linear-gradient(160deg,#06202a,#040a12)}
+.checkers{--c:var(--teak);--art:linear-gradient(160deg,#3a2614,#1d140b)}
+.pokdeng{--c:var(--lacquer);--art:linear-gradient(160deg,#3a0f14,#120708)}
+footer{margin-top:36px;color:var(--muted);font-size:.85rem}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+@media (prefers-reduced-motion:reduce){.card{transition:none}.card:hover{transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>เลือกเกม</h1>
+    <p>เล่นบนเบราว์เซอร์ได้เลย ไม่ต้องติดตั้ง</p>
+  </header>
+
+  <main class="grid">
+    <article class="card battleship">
+      <div class="art" aria-hidden="true">
+        <svg viewBox="0 0 96 96" fill="none" stroke="#4fe3c1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="48" cy="48" r="38" opacity=".35"/><circle cx="48" cy="48" r="24" opacity=".6"/>
+          <path d="M48 10v76M10 48h76" opacity=".35"/>
+          <path d="M22 60h52l-7 10H29z" fill="#4fe3c1" fill-opacity=".15"/><path d="M38 60V50h16v10M46 50v-8"/>
+          <circle cx="66" cy="32" r="4" fill="#f2b84b" stroke="#f2b84b"/>
+        </svg>
+      </div>
+      <div class="body">
+        <h2><a href="battleship/">Battleship 3D</a></h2>
+        <p class="desc">วางกองเรือแล้วผลัดกันยิงกับคอมพิวเตอร์ เลือกกติกาการยิงได้ก่อนเริ่ม</p>
+        <div class="meta"><span class="tag">วางแผนรบ</span><a class="offline" href="battleship/battleship-offline.html">ไฟล์ออฟไลน์</a></div>
+      </div>
+    </article>
+
+    <article class="card checkers">
+      <div class="art" aria-hidden="true">
+        <svg viewBox="0 0 96 96">
+          <g fill="#c8904a" fill-opacity=".35"><rect x="14" y="14" width="17" height="17"/><rect x="48" y="14" width="17" height="17"/><rect x="31" y="31" width="17" height="17"/><rect x="65" y="31" width="17" height="17"/><rect x="14" y="48" width="17" height="17"/><rect x="48" y="48" width="17" height="17"/><rect x="31" y="65" width="17" height="17"/><rect x="65" y="65" width="17" height="17"/></g>
+          <rect x="14" y="14" width="68" height="68" fill="none" stroke="#c8904a" stroke-width="2"/>
+          <circle cx="39.5" cy="39.5" r="6.5" fill="#d9434f"/><circle cx="56.5" cy="56.5" r="6.5" fill="#1d2638" stroke="#eef1f5" stroke-width="1.5"/>
+        </svg>
+      </div>
+      <div class="body">
+        <h2><a href="thai-checkers/">หมากฮอสไทย</a></h2>
+        <p class="desc">กระดานไม้สักตามกติกาหมากฮอสไทย มีเสียงประกอบ เล่นกับคอมพิวเตอร์หรือสองคนบนเครื่องเดียว</p>
+        <div class="meta"><span class="tag">กระดาน</span><a class="offline" href="thai-checkers/thai-checkers-offline.html">ไฟล์ออฟไลน์</a></div>
+      </div>
+    </article>
+
+    <article class="card pokdeng">
+      <div class="art" aria-hidden="true">
+        <svg viewBox="0 0 96 96" stroke-linejoin="round">
+          <rect x="22" y="22" width="34" height="48" rx="4" fill="#f3e6cf" transform="rotate(-12 39 46)"/>
+          <rect x="40" y="24" width="34" height="48" rx="4" fill="#f3e6cf" stroke="#120708" stroke-width="1.5" transform="rotate(10 57 48)"/>
+          <path d="M60 42c-4-5-10-1-6 4l6 6 6-6c4-5-2-9-6-4z" fill="#d9434f" transform="rotate(10 57 48)"/>
+        </svg>
+      </div>
+      <div class="body">
+        <h2><a href="pok-deng/">ป๊อกเด้ง วงเที่ยงคืน</a></h2>
+        <p class="desc">นั่งโต๊ะมุมมองบุคคลที่หนึ่ง วางเดิมพัน รับไพ่ แล้วลุ้นแต้มกับเจ้ามือ</p>
+        <div class="meta"><span class="tag">ไพ่</span><a class="offline" href="pok-deng/pok-deng-offline.html">ไฟล์ออฟไลน์</a></div>
+      </div>
+    </article>
+  </main>
+
+  <footer>ไฟล์ออฟไลน์คือเวอร์ชันไฟล์เดียว ดาวน์โหลดไปเปิดได้โดยไม่ต้องต่อเน็ต</footer>
+</div>
+</body>
+</html>
